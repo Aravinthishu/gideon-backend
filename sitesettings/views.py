@@ -17,3 +17,9 @@ class SocialView(APIView):
         socials = Social_links.objects.all()
         serializer = SocialLinks_serializers(socials, many=True)
         return Response(serializer.data)
+    
+class PrivacyView(APIView):
+    def get(self, request):
+        privacy = PrivacyPolicy.objects.first()
+        serializer = PrivacyPolicy_serializers(privacy)
+        return Response(serializer.data)
