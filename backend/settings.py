@@ -26,10 +26,10 @@ SECRET_KEY = 'django-insecure-09oje-%+01=qquivq1o856@3dkb!(sytuommni+ii6z@wzi13+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["api.gideonauto.com", "*"]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',
+    'http://localhost:5173', "gideonauto.com",
 ]
 
 
