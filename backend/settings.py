@@ -28,9 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["api.gideonauto.com", "*"]
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173', "gideonauto.com",
-]
 
 
 
@@ -65,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     
     'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
 
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -72,6 +70,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOWED_ORIGINS =  ["https://gideonauto.com/"]
+
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -145,6 +146,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Directory for collected s
 
 MEDIA_URL = '/media/'  # URL to access media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')  # Path to store media files
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
