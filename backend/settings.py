@@ -71,7 +71,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS =  ["https://gideonauto.com/"]
+CORS_ALLOWED_ORIGINS = [
+    "https://gideonauto.com",
+    "https://www.gideonauto.com",  # optional, if you also use www version
+    "https://api.gideonauto.com",  # also add your API domain here
+]
+
 
 
 ROOT_URLCONF = 'backend.urls'
